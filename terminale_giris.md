@@ -6,61 +6,74 @@ Bu doküman, Bash terminalinde kullanılabilecek temel komutları ve kısa açı
 
 ## Temel Komutlar
 
-- **`ls`** (*List*)  
+### ls(*List*)  
+
   Bulunduğunuz dizindeki dosya ve klasörleri listeler.
 
-- **`pwd`** (*Print Working Directory*)  
+### pwd(*Print Working Directory*)  
+
   Şu anda bulunduğunuz dizinin tam yolunu gösterir.
 
-- **`cd`** (*Change Directory*)  
+### cd(*Change Directory*)  
+
   Başka bir dizine geçiş yapmanızı sağlar. Örnek:  
-  - `cd desktop` → "desktop" adlı dizine geçer.
 
-- **`.. , . , ~ , *`**  
-  - `..` → Bir üst dizine geçer.  
-  - `.` → Bulunduğunuz mevcut dizini ifade eder.  
-  - `~` → Kullanıcının ana dizinini ifade eder.  
-  - `*` → Dosya adı eşleştirme için joker karakterdir.
+- `cd desktop` → "desktop" adlı dizine geçer.
 
-- **`clear`**  
+### .. , . , ~ , \*
+
+- `..` → Bir üst dizine geçer.  
+- `.` → Bulunduğunuz mevcut dizini ifade eder.  
+- `~` → Kullanıcının ana dizinini ifade eder.  
+- `*` → Dosya adı eşleştirme için joker karakterdir.
+
+### clear
+
   Terminal ekranını temizler ve komut geçmişini yukarı kaydırır.
 
 ---
 
 ## Dosya ve Klasör İşlemleri
 
-- **`mkdir`** (*Make Directory*)  
+### mkdir(*Make Directory*)  
+
   Yeni bir klasör oluşturur. Örnek:  
-  - `mkdir denemeKlasoru` → "denemeKlasoru" adlı bir klasör oluşturur.
 
-- **`touch`**  
+- `mkdir denemeKlasoru` → "denemeKlasoru" adlı bir klasör oluşturur.
+
+### touch
+
   Yeni bir dosya oluşturur. Örnek:  
-  - `touch deneme.txt` → "deneme.txt" adlı bir dosya oluşturur.
 
-- **`cat`** (*Concatenate*)
+- `touch deneme.txt` → "deneme.txt" adlı bir dosya oluşturur.
+
+### cat(*Concatenate*)
+
   Dosya içeriğini terminalde görüntüler. Örnek:  
-  - `cat dosya.txt` → "dosya.txt" dosyasının içeriğini gösterir.
 
-- **`rm`** (*Remove*)  
+- `cat dosya.txt` → "dosya.txt" dosyasının içeriğini gösterir.
+
+### rm(*Remove*)  
+
   Dosya veya klasörleri siler. Örnek:  
-  - `rm deneme.txt` → "deneme.txt" dosyasını siler.  
-  - `rm -rf denemeKlasoru` → "denemeKlasoru" adlı klasörü ve içindekileri siler.  
-  **Uyarı:** *Yanlış kullanımda dosyalarınızı geri alamazsınız!*
 
-- **`cp`** (*Copy*)  
+- `rm deneme.txt` → "deneme.txt" dosyasını siler.  
+- `rm -rf denemeKlasoru` → "denemeKlasoru" adlı klasörü ve içindekileri siler.  Uyarı:*Yanlış kullanımda dosyalarınızı geri alamazsınız!*
+
+### cp(*Copy*)  
 
 Bir dosyayı veya klasörü kopyalar. Örnek:  
 
 - `cp dosya.txt yeni_dosya.txt` → "dosya.txt" adlı dosyayı "yeni_dosya.txt" olarak kopyalar.
 
-- **`mv`** (*Move/Rename*)  
+### mv(*Move/Rename*)  
 
 Dosyaları taşır veya yeniden adlandırır. Örnek:  
 
 - `mv dosya.txt yeni_dosya.txt` → "dosya.txt" dosyasını "yeni_dosya.txt" olarak yeniden adlandırır.  
 - `mv dosya.txt /home/kullanici` → "dosya.txt" dosyasını belirtilen dizine taşır.
 
-- **`find`** (*Search for Files*)  
+### find(*Search for Files*)  
 
 Belirli bir dizinde dosya veya klasör arar.  
 Örnekler:  
@@ -68,7 +81,7 @@ Belirli bir dizinde dosya veya klasör arar.
 - `find . -name "dosya.txt"` → Bulunduğunuz dizinde "dosya.txt" dosyasını arar.  
 - `find /home -type d -name "klasoradi"` → "/home" altında adı "klasoradi" olan dizinleri arar.  
 
-- **`grep`** (*Search in Files*)  
+### grep(*Search in Files*)  
 
 Belirli bir metni dosyalar içinde arar.  
 Örnekler:  
@@ -76,7 +89,7 @@ Belirli bir metni dosyalar içinde arar.
 - `grep "anahtar kelime" dosya.txt` → "dosya.txt" içinde "anahtar kelime" geçen satırları gösterir.  
 - `grep -r "anahtar kelime" /home` → "/home" dizini altındaki tüm dosyalarda "anahtar kelime"yi arar.  
 
-- **`tar`** (*Archive Management*)  
+### tar(*Archive Management*)  
 
 Dosyaları sıkıştırmak veya sıkıştırılmış dosyaları açmak için kullanılır.  
 Örnekler:  
@@ -84,21 +97,21 @@ Dosyaları sıkıştırmak veya sıkıştırılmış dosyaları açmak için kul
 - `tar -czvf arsiv.tar.gz dosya1 dosya2` → "dosya1" ve "dosya2"yi "arsiv.tar.gz" olarak sıkıştırır.  
 - `tar -xzvf arsiv.tar.gz` → "arsiv.tar.gz" dosyasını çıkarır.  
 
-- **`chmod`** (*Change Permissions*)  
+### chmod(*Change Permissions*)  
 
 Dosya veya klasör izinlerini değiştirir.  
 Örnek:  
 
 - `chmod 755 dosya.txt` → "dosya.txt" için kullanıcıya tam izin verir, diğer kullanıcılara sadece okuma ve çalıştırma izni sağlar.  
 
-- **`chown`** (*Change Ownership*)  
+### chown(*Change Ownership*)  
 
 Bir dosya veya klasörün sahipliğini değiştirir.  
 Örnek:  
 
 - `sudo chown kullanici:grup dosya.txt` → "dosya.txt" dosyasının sahipliğini belirtilen kullanıcı ve gruba verir.  
 
-- **`nano` / `vim`** (*Text Editors*)  
+### nano` / `vim(*Text Editors*)  
 
 Terminalde metin düzenlemek için kullanılan araçlardır.  
 
@@ -109,43 +122,46 @@ Terminalde metin düzenlemek için kullanılan araçlardır.
 
 ## Sistem Güncelleme
 
-- **`sudo apt update && sudo apt upgrade`**  
+### sudo apt update && sudo apt upgrade
+
   Sistemin mevcut yazılım paketlerini günceller.  
-  - `sudo apt update` → Paket listesini günceller.  
-  - `sudo apt upgrade` → Paketlerin en son sürümlerini yükler.  
+
+- `sudo apt update` → Paket listesini günceller.  
+- `sudo apt upgrade` → Paketlerin en son sürümlerini yükler.  
 
 ---
 
 ## Eğlenceli Komutlar
 
-- **`cowsay -f tux "Hello Linux"`**  
+### cowsay -f tux "Hello Linux"
+
   Terminal ekranında bir penguenin "Hello Linux" yazısını konuşuyormuş gibi göstermesini sağlar. Eğlenceli bir görsel komuttur.
 
 ---
 
 ## Ek Linux Komutları
 
-### 1. **`echo`**  
+### echo
 
 Ekrana bir mesaj veya metin yazdırır. Örnek:  
 
 - `echo "Merhaba Linux"` → Terminalde "Merhaba Linux" yazar.
 
-### 5. **`whoami`**  
+### whoami
 
 Hangi kullanıcı olarak oturum açtığınızı gösterir.
 
-### 6. **`date`**  
+### date
 
 Sistemin tarih ve saatini görüntüler.
 
-### 7. **`man`** (*Manual*)  
+### man(*Manual*)  
 
 Komutlar için detaylı açıklamaları içeren kılavuzu açar. Örnek:  
 
 - `man ls` → "ls" komutunun ne işe yaradığını, tüm seçeneklerini ve kullanım detaylarını gösterir.
 
-### 8. **`history`**  
+### history
 
 Daha önce çalıştırdığınız komutların bir listesini gösterir.
 Örnekler:
@@ -154,55 +170,57 @@ Daha önce çalıştırdığınız komutların bir listesini gösterir.
 - `history 10` → Son 10 komutu gösterir.
 - `history | grep "aranan"` → Daha önce çalıştırdığınız komutlar arasında "aranan" kelimesini arar. (Burada "|" işareti, komutları birbirine bağlar.)
 
-### 9\. **`wget`** (*Web Get*)
+### wget(*Web Get*)
 
 Bir web sitesinden dosya indirmenizi sağlayan bir komuttur. Özellikle dosya indirme işlemlerinde kullanılır.  
 Örnek:
 
 - `wget https://linux101.local/banner-main.webp` → "banner-main.webp" adlı dosyayı belirtilen URL'den indirir.  
-    **Not:** Bazı sitelerde indirme işlemi için internet erişim izni gerekebilir.
+Not:Bazı sitelerde indirme işlemi için internet erişim izni gerekebilir.
 
-### 10\. **`convert`** (*ImageMagick*)
+### convert(*ImageMagick*)
 
 Görselleri farklı formatlara dönüştürmek veya boyutlandırmak için kullanılan bir komuttur.  
 Örnekler:
 
 - `convert dosya.png dosya.jpg` → "dosya.png" görselini "dosya.jpg" olarak dönüştürür.
 - `convert -resize 50% orijinal.jpg yeni.jpg` → Görselin boyutunu %50 küçültüp "yeni.jpg" olarak kaydeder.  
-    **Not:** Bu komut, sistemde *ImageMagick* yüklü olduğunda çalışır.
+Not:Bu komut, sistemde *ImageMagick* yüklü olduğunda çalışır.
 
 ## Alias Oluşturma
 
 Bash terminalinde sık kullandığınız komutlar için kısayol oluşturabilirsiniz.
 
-- **`alias`**
+### alias
+
   Sık kullanılan bir komut için kısayol oluşturur. Aynı zamanda tek başına kullanıldığında tanımlı kısayolları listeler.
   Örnekler:
-  - `alias ll='ls -alF'` → "ll" komutunu "ls -alF" komutunun kısayolu olarak tanımlar.
-  - `alias c='clear'` → "c" komutunu "clear" komutunun kısayolu olarak tanımlar.
-  - `alias update='sudo apt update && sudo apt upgrade -y'` → "update" komutunu "sudo apt update && sudo apt upgrade" komutlarının kısayolu olarak tanımlar.
+
+- `alias ll='ls -alF'` → "ll" komutunu "ls -alF" komutunun kısayolu olarak tanımlar.
+- `alias c='clear'` → "c" komutunu "clear" komutunun kısayolu olarak tanımlar.
+- `alias update='sudo apt update && sudo apt upgrade -y'` → "update" komutunu "sudo apt update && sudo apt upgrade" komutlarının kısayolu olarak tanımlar.
 
 Kalıcı alias tanımlamak için `~/.bashrc` dosyasına tanımlamalar ekleyebilirsiniz.
 
 ## Sistem İzleme ve Yönetim Araçları
 
-### 11\. **`htop`**
+### htop
 
 Sistemin donanım ve işlem kaynaklarını gerçek zamanlı olarak izlemek için kullanılan bir araçtır. *htop*, *top* komutunun daha kullanıcı dostu ve görselli bir alternatifidir.
 
 - `htop` → CPU, RAM, işlemler gibi sistem bilgilerini detaylı ve renkli bir arayüzde gösterir.  
-    **Not:** Bu komutu çalıştırmadan önce `sudo apt install htop` ile kurulum yapmanız gerekebilir.
+Not:Bu komutu çalıştırmadan önce `sudo apt install htop` ile kurulum yapmanız gerekebilir.
 
-### 12\. **`btop`** (*Better Top*)
+### btop(*Better Top*)
 
 *htop* komutunun daha modern ve detaylı bir sürümüdür. Sistem kaynaklarını grafiksel bir şekilde izlemek için kullanılır.
 
 - `btop` → İşlemci, bellek, disk, ağ kullanımı ve işlemleri görselli bir arayüzde gösterir.  
-    **Not:** *btop* modern sistemlerde tercih edilen bir alternatiftir ve kurulumu için `sudo apt install btop` komutunu kullanabilirsiniz.
+Not:*btop* modern sistemlerde tercih edilen bir alternatiftir ve kurulumu için `sudo apt install btop` komutunu kullanabilirsiniz.
 
 Dokümanınız oldukça kapsamlı olmuş, fakat Linux dünyasında temel seviyede sık kullanılan bazı komutlar eksik olabilir. İşte eklemeyi düşünebileceğiniz birkaç komut:  
 
-### 13. **`ps`** (*Process Status*)  
+### ps(*Process Status*)  
 
 Çalışan işlemleri listeler.  
 Örnek:  
@@ -210,7 +228,7 @@ Dokümanınız oldukça kapsamlı olmuş, fakat Linux dünyasında temel seviyed
 - `ps aux` → Tüm çalışan işlemleri gösterir.  
 - `ps -u kullanici` → Belirtilen kullanıcının işlemlerini listeler.  
 
-### 14. **`kill` ve `killall`** (*Terminate Processes*)  
+### kill ve killall(*Terminate Processes*)  
 
 Çalışan bir işlemi sonlandırır.  
 Örnekler:  
